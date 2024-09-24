@@ -1,8 +1,8 @@
 ---
+icon: file-zipper
 description: >-
   This guide shows how to install Open Hospital software suite, web and desktop
   versions
-icon: file-zipper
 cover: >-
   .gitbook/assets/Screenshot 2024-08-26 at 15-11-23 Open Hospital Software EMR
   HIS open source.png
@@ -38,7 +38,11 @@ In this guide:
 
 At the time of writing, the web version of OH is experimental and there is no official guide. So the guide shows how to build the web version from sources on GitHub and install it alongside with the Desktop version.
 
-This guide is intended for users wishing to install Open Hospital on Linux-based OS, for instance Ubuntu.
+{% hint style="warning" %}
+This guide is intended for users wishing to install Open Hospital on Linux-based OS, for instance Ubuntu, and Windows.
+
+**N.B.: This guide only works for OpenHospital 1.14.2 and later.**
+{% endhint %}
 
 ### 2. Installation of the Desktop version
 
@@ -106,7 +110,7 @@ MariaDB> use oh; source create_all_en.sql;
 
 Wait for the script to complete.
 
-#### 2.8. Execute Open Hospital configuration script
+#### 2.7. Execute Open Hospital configuration script
 
 Navigate back to Open Hospital root directory and execute oh.sh script:
 
@@ -161,9 +165,18 @@ If you have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 ```bash
 /opt/openhospital$ git clone https://github.com/informatici/openhospital-core.git \
                     && git clone https://github.com/informatici/openhospital-api.git
+
+# Checkout to the tag that is compatible with the desktop application version 
+# you've installed. If you've installed v1.14.2, then checkout to the tag v1.14.2
+/opt/openhospital$ cd openhospital-core && git checkout v1.14.2
+/opt/openhospital$ cd openhospital-api && git checkout v1.14.2
 ```
 
 If you don't have Git installed, you can download source archives: [Core](https://github.com/informatici/openhospital-core/archive/refs/heads/develop.zip) and [API](https://github.com/informatici/openhospital-api/archive/refs/heads/develop.zip). When the download is completed, extract the zip files.
+
+{% hint style="warning" %}
+Make sure to download the version that is compatible with the desktop application version you've installed. If you've installed v1.14.2, download the same version for the [CORE](https://github.com/informatici/openhospital-core/tags) and [API](https://github.com/informatici/openhospital-api/tags).
+{% endhint %}
 
 Next navigate to the Core source code root directory and run `./mvnw clean install` or if you have Maven installed system wide, you can run `mvn clean install` instead.
 
@@ -430,6 +443,10 @@ E.g.: `http://192.168.1.12:3000`
 {% hint style="info" %}
 This section is being written and will be available soon.
 {% endhint %}
+
+OpenHospital Dev team is actively working on providing a simple installation setup. This documentation is just a workaround until a simpler and official guide is produced.
+
+To keep your OpenHospital installation up-to-date, subscribe to mailing list to get notified when a new version is released. When a new version is released, migrate the database if there's any migrations, then re-apply all the steps excluded the step [2.3](oh-bundle-installation.md#id-2.3.-download-and-install-mariadb-10.6.16) to [2.6](oh-bundle-installation.md#id-2.6.-create-open-hospital-database-structure).
 
 
 
