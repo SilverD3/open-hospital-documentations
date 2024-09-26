@@ -1,7 +1,7 @@
 ---
 icon: file-zipper
 description: >-
-  This guide shows how to install OpenHospital software suite, web and desktop
+  This guide shows how to install Open Hospital software suite, web and desktop
   versions
 cover: >-
   .gitbook/assets/Screenshot 2024-08-26 at 15-11-23 Open Hospital Software EMR
@@ -36,25 +36,25 @@ In this guide:
 
 ### 1. Prerequisites and useful information
 
-At the time of writing, the web version of OpenHospital is experimental and there is no official guide. So the guide shows how to build the web version from sources on GitHub and install it alongside with the Desktop version.
+At the time of writing, the web version of Open Hospital is experimental and there is no official guide. So the guide shows how to build the web version from sources on GitHub and install it alongside with the Desktop version.
 
 {% hint style="warning" %}
-This guide is intended for users wishing to install OpenHospital on Linux-based OS, for instance Ubuntu, and Windows.
+This guide is intended for users wishing to install Open Hospital on Linux-based OS, for instance Ubuntu, and Windows.
 
-**N.B.: This guide only works for OpenHospital 1.14.2 and later.**
+**N.B.: This guide only works for Open Hospital 1.14.2 and later.**
 {% endhint %}
 
 ### 2. Installation of the Desktop version
 
 For the current latest stable, v.1.4.2, there's an installation guide for the Desktop version. So, this guide will only highlights the parts of the installation that affect the installation of the Web version. Here are steps to follow:
 
-#### 2.1. Download OpenHospital zip from GitHub
+#### 2.1. Download Open Hospital zip from GitHub
 
-The official releases of OpenHospital are hosted on GitHub at [https://github.com/informatici/openhospital/releases](https://github.com/informatici/openhospital/releases). If you're using Ubuntu, download the `multiarch` release, otherwise download the version that matches your Operating System.
+The official releases of Open Hospital are hosted on GitHub at [https://github.com/informatici/openhospital/releases](https://github.com/informatici/openhospital/releases). If you're using Ubuntu, download the `multiarch` release, otherwise download the version that matches your Operating System.
 
 #### 2.2. Extract the archive
 
-You can use the built-in `zip` library[ ](https://www.win-rar.com/predownload.html)or any other program that can extract zip archives. If you're using `unzip`  library, open the Terminal  (`Ctrl+Alt+T`) and move to the folder were you have downloaded OpenHospital and execute the following command:
+You can use the built-in `zip` library[ ](https://www.win-rar.com/predownload.html)or any other program that can extract zip archives. If you're using `unzip`  library, open the Terminal  (`Ctrl+Alt+T`) and move to the folder were you have downloaded Open Hospital and execute the following command:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -63,7 +63,7 @@ $ unzip -d /opt/openhospital/ OpenHospital-{version}-multiarch-client.zip
 ```
 
 {% hint style="info" %}
-Replace `{version}` with version of OpenHospital you're installing. E.g.: `OpenHospital-v1.14.2-multiarch-client.zip`
+Replace `{version}` with version of Open Hospital you're installing. E.g.: `OpenHospital-v1.14.2-multiarch-client.zip`
 {% endhint %}
 {% endtab %}
 
@@ -90,13 +90,13 @@ Follow this guide from the [official MariaDB documentation](https://mariadb.com/
 
 #### 2.4. Configure MariaDB
 
-By default, table names and column names on Linux are case sensitive. You need to enable `lower_case_table_names` and change other MySQL settings to make OpenHospital work smoothly.&#x20;
+By default, table names and column names on Linux are case sensitive. You need to enable `lower_case_table_names` and change other MySQL settings to make Open Hospital work smoothly.&#x20;
 
-Use this [part of OpenHospital admin manual](https://github.com/informatici/openhospital-doc/blob/develop/doc\_admin/AdminManual.adoc#2132-mariadbmysql---configuration) to apply these settings.
+Use this [part of Open Hospital admin manual](https://github.com/informatici/openhospital-doc/blob/develop/doc\_admin/AdminManual.adoc#2132-mariadbmysql---configuration) to apply these settings.
 
-#### 2.5. Create a database and user for OpenHospital
+#### 2.5. Create a database and user for Open Hospital
 
-Open the Terminal (`Ctrl+Alt+T`  - Ubuntu ) and move to the directory containing OpenHospital, probably `/opt/openhospital/`  (Ubuntu) or `C\OpenHospital` (Windows), then move to `sql` directory:
+Open the Terminal (`Ctrl+Alt+T`  - Ubuntu ) and move to the directory containing Open Hospital, probably `/opt/openhospital/`  (Ubuntu) or `C\OpenHospital` (Windows), then move to `sql` directory:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -125,9 +125,9 @@ Keep in mind or note it somewhere:
 You're going to use the same config while installing the web version.
 {% endhint %}
 
-#### 2.6. Create OpenHospital database structure
+#### 2.6. Create Open Hospital database structure
 
-Next, you have to connect to MariaDB and create OpenHospital database structure by executing the main script:
+Next, you have to connect to MariaDB and create Open Hospital database structure by executing the main script:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -151,9 +151,9 @@ MariaDB [(none)]> use oh; source create_all_en.sql;
 
 Wait for the script to complete.
 
-#### 2.7. Execute OpenHospital configuration script
+#### 2.7. Execute Open Hospital configuration script
 
-Navigate back to OpenHospital root directory and execute oh.sh script:
+Navigate back to Open Hospital root directory and execute oh.sh script:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -199,23 +199,23 @@ Use option `u` to create the desktop shortcut.
 
 <figure><img src=".gitbook/assets/oh create desktop shortcut.png" alt=""><figcaption></figcaption></figure>
 
-Go to your Desktop and double-click on the shortcut you've created to start OpenHospital. If you encounter permissions issues as shown in the image below (Ubuntu), follow your Operating System recommendations to fix them.
+Go to your Desktop and double-click on the shortcut you've created to start Open Hospital. If you encounter permissions issues as shown in the image below (Ubuntu), follow your Operating System recommendations to fix them.
 
 <figure><img src=".gitbook/assets/desktop shortcut missing permissions.png" alt=""><figcaption></figcaption></figure>
 
-Here's a short tutorial that shows how to start OpenHospital (on Ubuntu) for the first time when you have permissions issues:
+Here's a short tutorial that shows how to start Open Hospital (on Ubuntu) for the first time when you have permissions issues:
 
 <figure><img src=".gitbook/assets/start oh with desktop shortcut.gif" alt=""><figcaption><p>fix permission issue on OH desktop shortcut</p></figcaption></figure>
 
-And that's it. You've finished the installation of the desktop version of OpenHospital on your server.
+And that's it. You've finished the installation of the desktop version of Open Hospital on your server.
 
 ### 3. Installation of the web version (server)
 
-To install OpenHospital web version, we'll need to download sources from official repositories on GitHub and build them. OpenHospital requires Java 17 or newest version and uses Maven as package manager. You'll also need Node.js 14 or newest version to build the UI (User Interface).
+To install Open Hospital web version, we'll need to download sources from official repositories on GitHub and build them. Open Hospital requires Java 17 or newest version and uses Maven as package manager. You'll also need Node.js 14 or newest version to build the UI (User Interface).
 
-#### 3.1. Build OpenHospital Web API and UI
+#### 3.1. Build Open Hospital Web API and UI
 
-If you have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed, use it to clone the OpenHospital [Core](https://github.com/informatici/openhospital-core) and [API](https://github.com/informatici/openhospital-api) from GitHub:
+If you have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed, use it to clone the Open Hospital [Core](https://github.com/informatici/openhospital-core) and [API](https://github.com/informatici/openhospital-api) from GitHub:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -403,11 +403,12 @@ C:\OpenHospital\openhospital-api> cd ..\openhosptial-ui
 # you've installed. If you've installed v1.14.2, then checkout to the tag v1.14.2
 C:\OpenHospital\openhospital-ui> git checkout v1.14.2
 
+# Install dependencies
 C:\OpenHospital\openhospital-ui> npm i
 
 # Here we use the environment variable REACT_APP_BASE_PATH to set the address of the backend
 # Assuming the API will be running on port 8082, use the following command tu build the UI
-C:\OpenHospital\openhospital-ui> $env:REACT_APP_BASE_PATH="http://localhost:8082"; npm run build --prod
+C:\OpenHospital\openhospital-ui> $env:REACT_APP_BASE_PATH="http://{ip-address}:8082"; npm run build --prod
 ```
 {% endtab %}
 {% endtabs %}
@@ -434,17 +435,17 @@ Wait for the build to finish. Then try to start the UI using `serve` :&#x20;
 # Install serve
 C:\OpenHospital\openhospital-ui> npm install -g serve
 
-# Run the build of OpenHospital UI using serve
+# Run the build of Open Hospital UI using serve
 C:\OpenHospital\openhospital-ui> serve -s .\build -p 3000
 ```
 {% endtab %}
 {% endtabs %}
 
-Open your browser and navigate to http://localhost:3000, you should see the login page of OpenHospital.
+Open your browser and navigate to http://localhost:3000, you should see the login page of Open Hospital.
 
 #### 3.2. Create a service to automatically start the API
 
-Now create a service so that you can add it to the services daemon (`systemd` - Ubuntu) to easily manage the OpenHospital API.
+Now create a service so that you can add it to the services daemon (`systemd` - Ubuntu) to easily manage the Open Hospital API.
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -452,7 +453,7 @@ Start by creating the `openhospitalapi.service` in the folder `/etc/systemd/syst
 
 ```bash
 [Unit]
-Description=OpenHospital API
+Description=Open Hospital API
 After=syslog.target network.target
 
 [Service]
@@ -491,7 +492,7 @@ java -cp "openhospital-api-0.1.0.jar:rsc/:static/" org.springframework.boot.load
 ```
 
 {% hint style="info" %}
-Here we define the port to **8082**, and the address to 0.0.0.0, so OpenHospital API will be available on this port and both via `localhost` or the IP address.&#x20;
+Here we define the port to **8082**, and the address to 0.0.0.0, so Open Hospital API will be available on this port and both via `localhost` or the IP address.&#x20;
 {% endhint %}
 
 Make that file executable:
@@ -514,7 +515,7 @@ From the folder `/opt/openhospital/openhospital-api/target/` copy the built file
 /opt/openhospital/build/api$ cp -r /opt/openhospital/openhospital-api/target/static .
 ```
 
-Now try to start OpenHospital API using the bash script you've just created:
+Now try to start Open Hospital API using the bash script you've just created:
 
 ```bash
 /opt/openhospital/build$ ./start-api.sh
@@ -522,9 +523,9 @@ Now try to start OpenHospital API using the bash script you've just created:
 
 You should see the output:
 
-<figure><img src=".gitbook/assets/oh-api-started.png" alt=""><figcaption><p>Starting OpenHospital API output</p></figcaption></figure>
+<figure><img src=".gitbook/assets/oh-api-started.png" alt=""><figcaption><p>Starting Open Hospital API output</p></figcaption></figure>
 
-Stop the API using `Ctrl+C`, then try to start OpenHospital API using the system daemon:
+Stop the API using `Ctrl+C`, then try to start Open Hospital API using the system daemon:
 
 ```bash
 /opt/openhospital/build$ sudo systemctl start openhospitalapi
@@ -544,7 +545,7 @@ Open the browser and enter the URL `http://[localhost | {ip-address}]:8082/swagg
 
 <figure><img src=".gitbook/assets/oh swagger.png" alt=""><figcaption><p>OH API Swagger UI</p></figcaption></figure>
 
-Finally, we enable the OpenHospital API service in system daemon so that it will start automatically on computer startup.
+Finally, we enable the Open Hospital API service in system daemon so that it will start automatically on computer startup.
 
 ```bash
 /opt/openhospital/build$ sudo systemctl enable openhospitalapi
@@ -560,7 +561,7 @@ Move to NSSM folder:
 cd C:\nssm-2.24\win64>
 ```
 
-Run the command to install a service for OpenHospital API:
+Run the command to install a service for Open Hospital API:
 
 ```
 C:\nssm-2.24\win64> .\nssm.exe install OpenHospitalAPI
@@ -576,8 +577,8 @@ In the Application tab:
 
 In the Details tab:
 
-* Display name: OpenHospital API
-* Description: Lightweight, RESTful API server for OpenHospital
+* Display name: Open Hospital API
+* Description: Lightweight, RESTful API server for Open Hospital
 * Startup type: Make sure `Automatic` is selected
 
 Here are the different tabs:
@@ -608,9 +609,9 @@ Wait a few seconds (about 40 seconds), then open the browser and enter the URL `
 
 #### 3.3. Use PM2 to automatically start the UI
 
-To run the OpenHospital UI, we will use [serve](https://www.npmjs.com/package/serve).
+To run the Open Hospital UI, we will use [serve](https://www.npmjs.com/package/serve).
 
-Copy everything in the build folder in OpenHospital UI source code folder to the folder `ui`:
+Copy everything in the build folder in Open Hospital UI source code folder to the folder `ui`:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -647,9 +648,9 @@ C:\OpenHospital\build> serve -s .\ui -p 3000
 {% endtab %}
 {% endtabs %}
 
-Open your browser and navigate to http://localhost:3000. If you see OpenHospital login page, you're able to run the UI. Then stop the process using `Ctrl+C`.
+Open your browser and navigate to http://localhost:3000. If you see Open Hospital login page, you're able to run the UI. Then stop the process using `Ctrl+C`.
 
-Next, configure OpenHospital UI to automatically start on computer startup.
+Next, configure Open Hospital UI to automatically start on computer startup.
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -662,7 +663,7 @@ $ npm install pm2@latest -g
 # Make pm2 to start automatically on computer startup
 $ pm2 startup
 
-# Start OpenHospital UI using pm2
+# Start Open Hospital UI using pm2
 /opt/openhospital/build$ pm2 start "serve -s ui -l 3000" -n "OpenHospital UI"
 
 # Synchronize the process with saved list
@@ -679,7 +680,7 @@ Move to NSSM folder:
 cd C:\nssm-2.24\win64>
 ```
 
-Run the command to install a service for OpenHospital API:
+Run the command to install a service for Open Hospital API:
 
 ```
 C:\nssm-2.24\win64> .\nssm.exe install OpenHospitalUI
@@ -701,26 +702,26 @@ If you've installed Node.js using `nvm`, to find the path to serve executable, o
 
 The path to serve executable will `C:\Users\[user]\AppData\Roaming\nvm\[your-node-version]\serve.cmd`.
 
-* Startup directory: `C:\OpenHospital\build` (Path to the folder where OpenHospital UI build is located)
+* Startup directory: `C:\OpenHospital\build` (Path to the folder where Open Hospital UI build is located)
 * Arguments: `-s .\ui -l 3000`&#x20;
 
 In the Details tab:
 
-* Display name: OpenHospital UI
-* Description: OpenHospital Modern UI built with ReactJS
+* Display name: Open Hospital UI
+* Description: Open Hospital Modern UI built with ReactJS
 * Startup type: Make sure `Automatic` is selected
 
-Then click on the button `Install service`. Next go to Windows Services Manager and start the service OpenHospitalUI (same as you previously did for OpenHospital API service).
+Then click on the button `Install service`. Next go to Windows Services Manager and start the service OpenHospitalUI (same as you previously did for Open Hospital API service).
 {% endtab %}
 {% endtabs %}
 
-Open your browser and navigate to http://localhost:3000. If you see OpenHospital login page, you're done with the automation.
+Open your browser and navigate to http://localhost:3000. If you see Open Hospital login page, you're done with the automation.
 
 ### 4. Installation of the Desktop version (client)
 
-Installing OpenHospital Desktop on client workstations is quite simple. Copy the zip you downloaded on section [#id-2.1.-download-open-hospital-zip-from-github](oh-bundle-installation.md#id-2.1.-download-open-hospital-zip-from-github "mention") and paste it in the client workstation, let's say at `/opt/openhospital` (Ubuntu) or `C:\OpenHospital` (Windows). &#x20;
+Installing Open Hospital Desktop on client workstations is quite simple. Copy the zip you downloaded on section [#id-2.1.-download-open-hospital-zip-from-github](oh-bundle-installation.md#id-2.1.-download-open-hospital-zip-from-github "mention") and paste it in the client workstation, let's say at `/opt/openhospital` (Ubuntu) or `C:\OpenHospital` (Windows). &#x20;
 
-Next, unzip the archive and execute OpenHospital configuration script:
+Next, unzip the archive and execute Open Hospital configuration script:
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -741,7 +742,7 @@ Use the section [2.7](oh-bundle-installation.md#id-2.7.-execute-openhospital-con
 
 ### 5. Accessing the Web version (client)
 
-Accessing OpenHospital Web in client workstations (any other workstation in the network different from the server) is straightforward. Open the browser and enter the IP address of the server follow by colon (`:`) and the port on which OpenHospital UI is running.
+Accessing Open Hospital Web in client workstations (any other workstation in the network different from the server) is straightforward. Open the browser and enter the IP address of the server follow by colon (`:`) and the port on which Open Hospital UI is running.
 
 ```
 http://{ip-address}:{port}
@@ -753,9 +754,9 @@ E.g.: `http://192.168.1.12:3000`
 
 ### 6. Stay up-to-date
 
-OpenHospital Dev team is actively working on providing a simple installation setup. This documentation is just a workaround until a simpler and official guide is produced.
+Open Hospital Dev team is actively working on providing a simple installation setup. This documentation is just a workaround until a simpler and official guide is produced.
 
-To keep your OpenHospital installation up-to-date, subscribe to mailing list to get notified when a new version is released. When a new version is released, migrate the database if there's any migrations, then re-apply all the steps excluded the step [2.3](oh-bundle-installation.md#id-2.3.-download-and-install-mariadb-10.6.16) to [2.6](oh-bundle-installation.md#id-2.6.-create-open-hospital-database-structure).
+To keep your Open Hospital installation up-to-date, subscribe to mailing list to get notified when a new version is released. When a new version is released, migrate the database if there's any migrations, then re-apply all the steps excluded the step [2.3](oh-bundle-installation.md#id-2.3.-download-and-install-mariadb-10.6.16) to [2.6](oh-bundle-installation.md#id-2.6.-create-open-hospital-database-structure).
 
 
 
