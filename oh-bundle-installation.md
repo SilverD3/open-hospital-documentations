@@ -105,7 +105,7 @@ Open the Terminal (`Ctrl+Alt+T`  - Ubuntu ) and move to the directory containing
 ```
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="Windows" %}
 ```sh
 C:\OpenHospital> cd sql
 ```
@@ -668,8 +668,6 @@ $ pm2 startup
 # Synchronize the process with saved list
 /opt/openhospital/build$ pm2 save
 ```
-
-
 {% endtab %}
 
 {% tab title="Windows" %}
