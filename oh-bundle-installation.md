@@ -680,7 +680,7 @@ Move to NSSM folder:
 cd C:\nssm-2.24\win64>
 ```
 
-Run the command to install a service for Open Hospital API:
+Run the command to install a service for Open Hospital UI:
 
 ```
 C:\nssm-2.24\win64> .\nssm.exe install OpenHospitalUI
